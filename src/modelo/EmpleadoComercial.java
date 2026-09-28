@@ -10,5 +10,13 @@ public class EmpleadoComercial extends EmpleadoBase{
         this.porcentajeComision = porcentajeComision;
     }
 
-    
+    public double getPorcentajeComision(){
+        return porcentajeComision;
+    }
+
+    @Override
+    public double calcularSalarioTotal() {
+        double comision = getSalarioBase() * porcentajeComision / 100;
+        return getSalarioBase() + comision;
+    }
 }
