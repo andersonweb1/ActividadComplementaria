@@ -88,12 +88,36 @@ public class EmpleadoControlador {
                                            String tipo, String bonificacion) {
 
         double salarioBase = Double.parseDouble(salario);
-        if (tipo.equals("Administrativo")) {
-            double bono = Double.parseDouble(bonificacion);
-            return new EmpleadoAdministrativo(cedula, nombre, salarioBase, bono);
-        }
-        return new EmpleadoBase(cedula, nombre, salarioBase);
 
+        if (tipo.equals("Administrativo")) {
+
+            double bono = Double.parseDouble(bonificacion);
+
+            return new EmpleadoAdministrativo(
+                    cedula,
+                    nombre,
+                    salarioBase,
+                    bono
+            );
+        }
+
+        if (tipo.equals("Comercial")) {
+
+            double porcentaje = Double.parseDouble(bonificacion);
+
+            return new EmpleadoComercial(
+                    cedula,
+                    nombre,
+                    salarioBase,
+                    porcentaje
+            );
+        }
+
+        return new EmpleadoBase(
+                cedula,
+                nombre,
+                salarioBase
+        );
     }
 
     // ======================= OPERACIONES CRUD =======================
