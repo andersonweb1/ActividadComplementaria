@@ -69,6 +69,18 @@ public class EmpleadoControlador {
         if (tipo.equals("Administrativo") && !esNumeroValido(bonificacion)) {
             return "La bonificación debe ser un número positivo.";
         }
+
+        if (tipo.equals("Comercial") && !esNumeroValido(bonificacion)){
+            return "La comisión debe ser un porcentaje válido";
+        }
+
+        if (tipo.equals("Comercial")){
+            double porcentaje = Double.parseDouble(bonificacion);
+
+            if (porcentaje > 50){
+                return "La comision no puede ser mayor al 50%";
+            }
+        }
         return null;
     }
     // Fábrica de empleados: decide qué clase instanciar según el tipo
