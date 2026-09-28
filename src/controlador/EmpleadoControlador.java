@@ -1,4 +1,5 @@
 package controlador;
+import modelo.EmpleadoComercial;
 import modelo.EmpleadoAdministrativo;
 import modelo.EmpleadoBase;
 import modelo.RepositorioEmpleados;
